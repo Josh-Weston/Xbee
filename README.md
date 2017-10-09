@@ -16,4 +16,8 @@ One rebooted, you can use `ls -l /dev` to view the ports and you should see one 
 ### Wiring XBEE to RPi 3
 Having the XBEE share the same power rails and ground as the other components caused fairly large voltage dropouts. When wiring the XBEE to the RPi 3, and expecting to power other components with 3.3v, your best bet is to provide the XBEE with its own 3.3v and GND pin.
 
+### Arduino to XBEE Communication 1
+The first type of communication available from Arduino to XBEE is through the Serial Port. Once serial is received, it is forwarded to the coordinating XBEE in the network. This allows the Arduino to read inputs, perform processing, and pass a custom data frame to the XBEE.
 
+### Arduino to XBEE Communication 2
+The second type is for the Arduino to read an input, perform processing, and then set its DO/AO pin to a value. The XBEE is connected to the output pin, which means the XBEE can read the signal and forward anormal data frame to the coordinator. If the coordinator is only expected/programmed to read data frames, then this option is the most enticing.
